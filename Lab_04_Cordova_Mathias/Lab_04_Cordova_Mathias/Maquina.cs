@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Lab_04_Cordova_Mathias
 {
-    class Maquina
+    abstract class Maquina
     {
+        abstract public void Apagado();
+        abstract public void Encendido();
+        abstract public bool Reiniciado();
+        abstract public void Procesar(int Peso);
+
     }
 }

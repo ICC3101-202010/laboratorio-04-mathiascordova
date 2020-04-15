@@ -6,7 +6,35 @@ using System.Threading.Tasks;
 
 namespace Lab_04_Cordova_Mathias
 {
-    class Ensamblaje
+    class Ensamblaje : Maquina
     {
+        private int MemoriaMax = 8;
+        private int MemoriaUse = 0;
+
+        public override void Apagado()
+        {
+            Console.WriteLine("APAGANDO ENSAMBLAJE...");
+        }
+        public override void Encendido()
+        {
+            MemoriaUse = 0;
+            Console.WriteLine("ENCENDIENDO ENSAMBLAJE...");
+        }
+        public override bool Reiniciado()
+        {
+            if (MemoriaUse >= MemoriaMax)
+            {
+                Console.WriteLine("ENSAMBLAJE NECESITA REINICIAR!");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public override void Procesar(int Peso)
+        {
+            MemoriaUse += Peso;
+        }
     }
 }
