@@ -14,17 +14,22 @@ namespace Lab_04_Cordova_Mathias
         public override void Apagado()
         {
             Console.WriteLine("APAGANDO VERIFICACION...");
+            Console.WriteLine("");
         }
         public override void Encendido()
         {
             MemoriaUse = 0;
             Console.WriteLine("ENCENDIENDO VERIFICACION...");
+            Console.WriteLine("Memoria: " + MemoriaUse);
+            Console.WriteLine("");
         }
         public override bool Reiniciado()
         {
             if (MemoriaUse >= MemoriaMax)
             {
                 Console.WriteLine("VERIFICACION NECESITA REINICIAR!");
+                Console.WriteLine("Memoria: " + MemoriaUse);
+                Console.WriteLine("");
                 return true;
             }
             else

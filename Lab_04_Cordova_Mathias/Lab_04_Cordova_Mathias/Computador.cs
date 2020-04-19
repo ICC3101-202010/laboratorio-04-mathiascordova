@@ -8,11 +8,11 @@ namespace Lab_04_Cordova_Mathias
 {
     class Computador
     {
-        private Recepcion Rec;
-        private Almacenamiento Alm;
-        private Ensamblaje Ens;
-        private Verificacion Ver;
-        private Empaque Emp;
+        private Recepcion Rec= new Recepcion();
+        private Almacenamiento Alm= new Almacenamiento();
+        private Ensamblaje Ens= new Ensamblaje();
+        private Verificacion Ver= new Verificacion();
+        private Empaque Emp= new Empaque();
 
         public void FabricOn()
         {
@@ -41,6 +41,7 @@ namespace Lab_04_Cordova_Mathias
         public void CheckReset()
         {
             List<Maquina> allMaquinas = new List<Maquina>() { Rec, Alm, Ens, Ver, Emp };
+            List<string> Nombres = new List<string>() { "RECEPCION", "ALMACENAMIENTO", "ENSAMBLAJE", "VERIFICACION", "EMPAQUE" };
             for (int i=0; i < allMaquinas.Count(); i++)
             {
                 bool compReset = allMaquinas[i].Reiniciado();
@@ -51,7 +52,8 @@ namespace Lab_04_Cordova_Mathias
                 }
                 else
                 {
-                    continue;
+                    Console.WriteLine("LA MAQUINA " + Nombres[i] + " PROCESO SIN PROBLEMAS");
+                    Console.WriteLine("");
                 }
             }
         }

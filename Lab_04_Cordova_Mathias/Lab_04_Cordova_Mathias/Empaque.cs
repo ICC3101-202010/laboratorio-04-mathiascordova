@@ -14,17 +14,22 @@ namespace Lab_04_Cordova_Mathias
         public override void Apagado()
         {
             Console.WriteLine("APAGANDO EMPAQUE...");
+            Console.WriteLine("");
         }
         public override void Encendido()
         {
             MemoriaUse = 0;
             Console.WriteLine("ENCENDIENDO EMPAQUE...");
+            Console.WriteLine("Memoria: " + MemoriaUse);
+            Console.WriteLine("");
         }
         public override bool Reiniciado()
         {
             if (MemoriaUse >= MemoriaMax)
             {
                 Console.WriteLine("EMPAQUE NECESITA REINICIAR!");
+                Console.WriteLine("Memoria: " + MemoriaUse);
+                Console.WriteLine("");
                 return true;
             }
             else
